@@ -4,7 +4,7 @@ export class UserService {
   // 登录
   static login(params: Api.Auth.LoginParams) {
     return request.post<Api.Auth.LoginResponse>({
-      url: '/api/common/auth/login',
+      url: '/api/system/auth/login',
       params
       // showErrorMessage: false // 不显示错误消息
     })
@@ -12,15 +12,15 @@ export class UserService {
 
   // 获取用户信息
   static getUserInfo() {
-    return request.get<Api.User.UserInfo>({
-      url: '/api/common/user/info'
+    return request.post<Api.User.UserInfo>({
+      url: '/api/system/user/info'
     })
   }
 
   // 获取用户列表
   static getUserList(params: Api.Common.PaginatingParams) {
-    return request.get<Api.User.UserListData>({
-      url: '/api/common/user/list',
+    return request.post<Api.User.UserListData>({
+      url: '/api/system/user/list',
       params
     })
   }
